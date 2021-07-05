@@ -3,7 +3,7 @@ import React from 'react';
 type PropsType = {
   title: string;
   collapsed: boolean;
-  setCollapsed: any;
+  setCollapsed: (collapsed: boolean) => void;
 };
 
 const AccordionTitle: React.FC<PropsType> = ({title, setCollapsed, collapsed}) => {

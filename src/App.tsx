@@ -1,21 +1,23 @@
 import React, {useState} from 'react';
-import './App.css';
-import Accordion from './components/Accordion';
-import Rating from './components/Rating';
+import style from './App.module.css';
+import Accordion from './components/Accordion/Accordion';
+import OnOff from './components/OnOff/OnOff';
+import Rating from './components/Rating/Rating';
 
 function App() {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className="app">
+    <div className={style.app}>
       <PageTitle title={'This is App component!'} />
-      <Rating value={0} />
       <Accordion
         title={'Accordion Menu'}
         collapsed={collapsed}
         setCollapsed={setCollapsed}
       />
-      <Rating value={3} />
+      <Rating />
+
+      <OnOff />
     </div>
   );
 }
