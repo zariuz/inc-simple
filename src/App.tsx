@@ -5,19 +5,20 @@ import OnOff from './components/OnOff/OnOff';
 import Rating from './components/Rating/Rating';
 
 function App() {
-  const [collapsed, setCollapsed] = useState(false);
+  const [ratingValue, setRatingValue] = useState(0);
+  const [accordionСollapsed, setAccordionCollapsed] = useState(false);
+  const [toggleOnOff, setToggleOnOff] = useState(false);
 
   return (
     <div className={style.app}>
       <PageTitle title={'This is App component!'} />
       <Accordion
         title={'Accordion Menu'}
-        collapsed={collapsed}
-        setCollapsed={setCollapsed}
+        accordionСollapsed={accordionСollapsed}
+        setAccordionCollapsed={setAccordionCollapsed}
       />
-      <Rating />
-
-      <OnOff />
+      <Rating ratingValue={ratingValue} setRatingValue={setRatingValue} />
+      <OnOff toggleOnOff={toggleOnOff} setToggleOnOff={setToggleOnOff} />
     </div>
   );
 }

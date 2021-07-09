@@ -4,17 +4,13 @@ import style from './Star.module.css';
 type PropsType = {
   selected?: boolean;
   id: number;
-  setValue: (value: number) => void;
+  setRatingValue: (value: number) => void;
 };
 
-const Star: React.FC<PropsType> = ({selected, id, setValue}) => {
-  return selected ? (
-    <div className={style.star} onClick={() => setValue(id)}>
-      <b>star </b>
-    </div>
-  ) : (
-    <div className={style.star} onClick={() => setValue(id)}>
-      star{' '}
+const Star: React.FC<PropsType> = ({selected, id, setRatingValue}) => {
+  return (
+    <div className={style.star} onClick={() => setRatingValue(id)}>
+      {selected ? <b>star </b> : 'star'}
     </div>
   );
 };
