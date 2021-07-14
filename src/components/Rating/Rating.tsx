@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import Star from '../Star/Star';
 
-type PropsType = {
+export type RatingPropsType = {
   ratingValue: number;
   setRatingValue: (value: number) => void;
 };
 
-const Rating: React.FC<PropsType> = ({ratingValue, setRatingValue}) => {
+export const Rating: React.FC<RatingPropsType> = ({ratingValue, setRatingValue}) => {
   return (
     <div>
       <Star selected={ratingValue > 0} id={1} setRatingValue={setRatingValue} />
@@ -17,5 +17,3 @@ const Rating: React.FC<PropsType> = ({ratingValue, setRatingValue}) => {
     </div>
   );
 };
-
-export default Rating;

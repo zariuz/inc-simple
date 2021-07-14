@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import AccordionBody from './AccordionBody';
-import AccordionTitle from './AccordionTitle';
+import {AccordionBody} from './AccordionBody';
+import {AccordionTitle} from './AccordionTitle';
 
-type PropsType = {
+export type AccordionPropsType = {
   title: string;
   accordionСollapsed: boolean;
   setAccordionCollapsed: (collapsed: boolean) => void;
 };
 
-const Accordion: React.FC<PropsType> = ({
+export const Accordion: React.FC<AccordionPropsType> = ({
   title,
   accordionСollapsed,
   setAccordionCollapsed,
@@ -24,5 +24,3 @@ const Accordion: React.FC<PropsType> = ({
     </div>
   );
 };
-
-export default Accordion;

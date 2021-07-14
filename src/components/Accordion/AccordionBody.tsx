@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AccordionBody = () => {
+export const AccordionBody = () => {
   return (
     <ul>
       <li>1</li>
@@ -9,5 +9,3 @@ const AccordionBody = () => {
     </ul>
   );
 };
-
-export default AccordionBody;

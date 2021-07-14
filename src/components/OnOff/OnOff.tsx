@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import style from './OnOff.module.css';
 
-type PropsType = {
+export type OnOffPropsType = {
   toggleOnOff: boolean;
   setToggleOnOff: (toggleOnOff: boolean) => void;
 };
 
-const OnOff: React.FC<PropsType> = ({toggleOnOff, setToggleOnOff}) => {
+export const OnOff: React.FC<OnOffPropsType> = ({toggleOnOff, setToggleOnOff}) => {
   const onClicked = () => !toggleOnOff && setToggleOnOff(true);
   const offClicked = () => toggleOnOff && setToggleOnOff(false);
 
@@ -26,5 +26,3 @@ const OnOff: React.FC<PropsType> = ({toggleOnOff, setToggleOnOff}) => {
     </div>
   );
 };
-
-export default OnOff;

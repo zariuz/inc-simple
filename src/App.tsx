@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import style from './App.module.css';
-import Accordion from './components/Accordion/Accordion';
-import OnOff from './components/OnOff/OnOff';
-import Rating from './components/Rating/Rating';
+import {Accordion} from './components/Accordion/Accordion';
+import {OnOff} from './components/OnOff/OnOff';
+import {Rating} from './components/Rating/Rating';
 
-function App() {
+export function App() {
   const [ratingValue, setRatingValue] = useState(0);
   const [accordionСollapsed, setAccordionCollapsed] = useState(false);
   const [toggleOnOff, setToggleOnOff] = useState(false);
@@ -30,5 +30,3 @@ type PageTitlePropsTupe = {
 const PageTitle: React.FC<PageTitlePropsTupe> = ({title}) => {
   return <h1>{title}</h1>;
 };
-
-export default App;
