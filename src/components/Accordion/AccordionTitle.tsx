@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react";
 
 type PropsType = {
   title: string;
-  accordionСollapsed: boolean;
+  accordionCollapsed: boolean;
   setAccordionCollapsed: (collapsed: boolean) => void;
 };
 
 export const AccordionTitle: React.FC<PropsType> = ({
   title,
   setAccordionCollapsed,
-  accordionСollapsed,
+  accordionCollapsed,
 }) => {
   const changeAccordion = (): void => {
-    setAccordionCollapsed(!accordionСollapsed);
+    setAccordionCollapsed(!accordionCollapsed);
   };
 
   return <h3 onClick={changeAccordion}>{title}</h3>;

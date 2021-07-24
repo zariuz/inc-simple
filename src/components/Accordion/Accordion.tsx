@@ -1,26 +1,33 @@
-import React, {useState} from 'react';
-import {AccordionBody} from './AccordionBody';
-import {AccordionTitle} from './AccordionTitle';
+import React from "react";
+import { AccordionBody } from "./AccordionBody";
+import { AccordionTitle } from "./AccordionTitle";
+import { ItemType } from "../../App";
 
 export type AccordionPropsType = {
   title: string;
-  accordionСollapsed: boolean;
+  accordionCollapsed: boolean;
   setAccordionCollapsed: (collapsed: boolean) => void;
+  items: ItemType[];
+  clickHandler: (value: number) => void;
 };
 
 export const Accordion: React.FC<AccordionPropsType> = ({
   title,
-  accordionСollapsed,
+  items,
+  accordionCollapsed,
   setAccordionCollapsed,
+  clickHandler,
 }) => {
   return (
     <div>
       <AccordionTitle
         title={title}
-        accordionСollapsed={accordionСollapsed}
+        accordionCollapsed={accordionCollapsed}
         setAccordionCollapsed={setAccordionCollapsed}
       />
-      {!accordionСollapsed && <AccordionBody />}
+      {!accordionCollapsed && (
+        <AccordionBody items={items} clickHandler={clickHandler} />
+      )}
     </div>
   );
 };

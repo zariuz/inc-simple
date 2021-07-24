@@ -1,38 +1,39 @@
-import React, {useState} from 'react';
-import {ComponentStory, ComponentMeta} from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import {Accordion, AccordionPropsType} from './Accordion';
+import { Accordion, AccordionPropsType } from "./Accordion";
 
 export default {
-  title: 'Accordion',
+  title: "Accordion",
   component: Accordion,
 } as ComponentMeta<typeof Accordion>;
 
-const Template: ComponentStory<typeof Accordion> = (args: AccordionPropsType) => (
-  <Accordion {...args} />
-);
+const Template: ComponentStory<typeof Accordion> = (
+  args: AccordionPropsType
+) => <Accordion {...args} />;
 
 export const CollapsedOn = Template.bind({});
 CollapsedOn.args = {
-  title: 'React!!!',
-  accordionСollapsed: false,
+  title: "React!!!",
+  accordionCollapsed: false,
   setAccordionCollapsed: () => {},
 };
 
 export const CollapsedOff = Template.bind({});
 CollapsedOff.args = {
-  title: 'React!!!',
-  accordionСollapsed: true,
+  title: "React!!!",
+  accordionCollapsed: true,
   setAccordionCollapsed: () => {},
 };
 
-export const CollapsedMod = () => {
-  const [collapsed, setСollapsed] = useState(false);
-  return (
-    <Accordion
-      title={'React!!!'}
-      accordionСollapsed={collapsed}
-      setAccordionCollapsed={() => setСollapsed(!collapsed)}
-    />
-  );
-};
+// export const CollapsedMod = () => {
+//   const [collapsed, setCollapsed] = useState(false);
+//   return (
+//     <Accordion
+//       items={items}
+//       title={"React!!!"}
+//       accordionCollapsed={collapsed}
+//       setAccordionCollapsed={() => setCollapsed(!collapsed)}
+//     />
+//   );
+// };

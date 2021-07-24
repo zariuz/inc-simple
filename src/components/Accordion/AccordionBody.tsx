@@ -1,11 +1,25 @@
-import React from 'react';
+import React from "react";
+import { ItemType } from "../../App";
 
-export const AccordionBody = () => {
-  return (
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
-  );
+type PropsTypes = {
+  items: ItemType[];
+  clickHandler: (value: number) => void;
+};
+
+export const AccordionBody: React.FC<PropsTypes> = ({
+  items,
+  clickHandler,
+}) => {
+  const itemsList = items.map((i) => (
+    <li
+      onClick={() => {
+        clickHandler(i.value);
+      }}
+      key={i.value}
+    >
+      {i.title}
+    </li>
+  ));
+
+  return <ul>{itemsList}</ul>;
 };
