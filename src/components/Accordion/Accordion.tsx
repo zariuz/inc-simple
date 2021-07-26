@@ -8,7 +8,7 @@ export type AccordionPropsType = {
   accordionCollapsed: boolean;
   setAccordionCollapsed: (collapsed: boolean) => void;
   items: ItemType[];
-  clickHandler: (value: number) => void;
+  clickHandler: (value: string) => void;
 };
 
 export const Accordion: React.FC<AccordionPropsType> = ({
@@ -25,6 +25,7 @@ export const Accordion: React.FC<AccordionPropsType> = ({
         accordionCollapsed={accordionCollapsed}
         setAccordionCollapsed={setAccordionCollapsed}
       />
+
       {!accordionCollapsed && (
         <AccordionBody items={items} clickHandler={clickHandler} />
       )}

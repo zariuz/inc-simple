@@ -3,7 +3,7 @@ import { ItemType } from "../../App";
 
 type PropsTypes = {
   items: ItemType[];
-  clickHandler: (value: number) => void;
+  clickHandler: (value: string) => void;
 };
 
 export const AccordionBody: React.FC<PropsTypes> = ({
