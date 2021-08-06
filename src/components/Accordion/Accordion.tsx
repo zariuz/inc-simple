@@ -1,12 +1,12 @@
-import React from "react";
+import React, { Dispatch } from "react";
 import { AccordionBody } from "./AccordionBody";
 import { AccordionTitle } from "./AccordionTitle";
-import { ItemType } from "../../App";
+import { ActionType, ItemType, StateType } from "../../App";
 
 export type AccordionPropsType = {
   title: string;
-  accordionCollapsed: boolean;
-  setAccordionCollapsed: (collapsed: boolean) => void;
+  state: StateType;
+  setAccordionCollapsed: Dispatch<ActionType>;
   items: ItemType[];
   clickHandler: (value: string) => void;
 };
@@ -14,7 +14,7 @@ export type AccordionPropsType = {
 export const Accordion: React.FC<AccordionPropsType> = ({
   title,
   items,
-  accordionCollapsed,
+  state,
   setAccordionCollapsed,
   clickHandler,
 }) => {
@@ -22,11 +22,10 @@ export const Accordion: React.FC<AccordionPropsType> = ({
     <div>
       <AccordionTitle
         title={title}
-        accordionCollapsed={accordionCollapsed}
         setAccordionCollapsed={setAccordionCollapsed}
       />
 
-      {!accordionCollapsed && (
+      {!state.collapsed && (
         <AccordionBody items={items} clickHandler={clickHandler} />
       )}
     </div>

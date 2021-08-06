@@ -12,19 +12,19 @@ const Template: ComponentStory<typeof Accordion> = (
   args: AccordionPropsType
 ) => <Accordion {...args} />;
 
-export const CollapsedOn = Template.bind({});
-CollapsedOn.args = {
-  title: "React!!!",
-  accordionCollapsed: false,
-  setAccordionCollapsed: () => {},
-};
+// export const CollapsedOn = Template.bind({});
+// CollapsedOn.args = {
+//   title: "React!!!",
+//   accordionCollapsed: false,
+//   setAccordionCollapsed: () => {},
+// };
 
-export const CollapsedOff = Template.bind({});
-CollapsedOff.args = {
-  title: "React!!!",
-  accordionCollapsed: true,
-  setAccordionCollapsed: () => {},
-};
+// export const CollapsedOff = Template.bind({});
+// CollapsedOff.args = {
+//   title: "React!!!",
+//   accordionCollapsed: true,
+//   setAccordionCollapsed: () => {},
+// };
 
 // export const CollapsedMod = () => {
 //   const [collapsed, setCollapsed] = useState(false);
